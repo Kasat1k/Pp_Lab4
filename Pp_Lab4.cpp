@@ -82,15 +82,22 @@ int main() {
 
     vector<int> data(1000000);
     fillVecRandomNum(data, 1, 2000000);
+    vector<int> dataCopy(1000000);
+    dataCopy = data;
     string policy;
     policy = "Without policy";
     findMin(data, policy);
+    data = dataCopy;
     policy = "Parallel";
     findMin(data, policy);
+    data = dataCopy;
     policy = "Parallel_unseq";
     findMin(data, policy);
+    data = dataCopy;
     policy = "UnSequential";
     findMin(data, policy);
+    data = dataCopy;
+   
     cout << "Custom parallel algorithm results:\n";
     cout << "\t\tK    Time \n";
 
